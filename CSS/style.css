@@ -1,0 +1,202 @@
+/* Basic Reset and Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light Blue Background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation (Flexbox) */
+header {
+    background-color: #6495ED; /* Cornflower Blue Header */
+    color: white;
+    padding: 1.2em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fffacd; /* Lemon Chiffon Logo Text */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6em 1.2em;
+    margin-left: 1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #4169E1; /* Royal Blue Hover */
+}
+
+/* Main Content (CSS Grid) */
+main.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 25px;
+    padding: 25px;
+}
+
+.hero {
+    background-color: #afeeee; /* Pale Turquoise Hero */
+    padding: 4em 2.5em;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    margin-top: 0;
+    color: #008080; /* Teal Hero Title */
+    font-size: 2.5em;
+}
+
+.button {
+    display: inline-block;
+    background-color: #32CD32; /* Lime Green Button */
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button.small {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+}
+
+.button:hover {
+    background-color: #228B22; /* Forest Green Hover */
+}
+
+.featured-products {
+    padding: 25px 0;
+}
+
+.featured-products h2 {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #7669ff; /* Hot Pink Section Title */
+    font-size: 2em;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive product grid */
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #fffafa; /* Snow Product Card */
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: #FF8C00; /* Dark Orange Product Title */
+}
+
+.sidebar {
+    background-color:black; /* Lavender Blush Sidebar */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    color: #BA55D3; /* Medium Orchid Sidebar Title */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 0.6em 0;
+    text-decoration: none;
+    color: #00BFFF; /* Deep Sky Blue Link */
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #1E90FF; /* Dodger Blue Hover */
+}
+
+/* Footer */
+footer {
+    background-color: #6495ED; /* Cornflower Blue Footer */
+    color: white;
+    text-align: center;
+    padding: 1.2em 2em;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet View (min-width: 768px) */
+@media (min-width: 768px) {
+    main.grid-container {
+        grid-template-columns: 2fr 1fr; /* Two columns for tablet */
+        grid-template-areas:
+            "hero hero"
+            "products sidebar";
+    }
+
+    .hero {
+        text-align: left;
+    }
+}
+
+/* Desktop View (min-width: 992px) */
+@media (min-width: 992px) {
+    header nav ul {
+        margin-left: auto; /* Push navigation to the right */
+    }
+
+    main.grid-container {
+        grid-template-columns: 1fr 300px; /* Two columns, sidebar fixed width */
+        grid-template-areas:
+            "hero sidebar"
+            "products sidebar";
+    }
+
+    .hero {
+        text-align: left;
+    }
+}
